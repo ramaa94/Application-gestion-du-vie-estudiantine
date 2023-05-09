@@ -1,0 +1,67 @@
+{% block javascripts %}
+<script src="{{asset('assets/js/liste.js')}} " defer></script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/try.css')}}">
+{% endblock %}
+{% block body %}
+<body class="background">
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="/clubs">Accueil</a></li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+            <div class="dropdown-content">
+                <a href="/new/">créer club</a>
+              <a href="/clubs/list">Nos clubs</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+            <div class="dropdown-content">
+                <a href="/newevent/">créer Evenement</a>
+              <a href="/events/list">Nos Evenement</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+
+
+<div class="nosclubs" style="    font-size: 12vw; margin-top:50px;">Nos Evenements</div>
+<div class="pulse"></div>
+
+
+
+
+ <section id="clubs" style="display:flex">
+{% for event in  events %}
+
+    <div class="oneclub" >
+        
+        <img id="imge" width="300px" height="300px" src="{{asset(event.EvenementImage)}}">
+        <h1 id="title">{{event.EvenementNom}}</h1>
+        <span id="date">Created At : {{event.CreatedAt|date('d/m/y')}}</span>
+        <a href="{{path('event',{'id':event.id})}}"><button id="suite">Lire la suite</button></a>
+        {# <button id="follow">Follow</button> #}
+        <span id="followers" style="">likes</span>
+    </div>
+        {% endfor %}
+  </section> 
+   <script  src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</body>
+{% endblock %}

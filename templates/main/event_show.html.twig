@@ -1,0 +1,62 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/c_show.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+{% endblock %}
+{% block body %}
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="/clubs">Accueil</a></li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+            <div class="dropdown-content">
+                <a href="/new/">créer club</a>
+              <a href="/clubs/list">Nos clubs</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+            <div class="dropdown-content">
+                <a href="/newevent/">créer Evenement</a>
+              <a href="/events/list">Nos Evenement</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+
+<article>
+    <img id="img" src="{{asset(oneevent.EvenementImage)}}"/>
+    {# <a href="{{path('event',{'id':oneevent.id})}}"><button id="suite">Modifier</button></a> #}
+    
+       
+        
+    <section class="details_club" style="  height: 500px; width:100%;">
+        <h1>{{oneevent.EvenementNom}}</h1>
+        <a id="modifier" href="{{path('event_edit',{'id':oneevent.id})}}"><span class="material-symbols-outlined">
+            edit</span></a>
+           
+
+        <span id="number"><span style="color:white">Nombre des membres:</span>&nbsp;{{oneevent.EvenementClubNom}}</span></br>
+        <span id="institut"><span style="color:white">Institut:</span>&nbsp;{{oneevent.EvenementType}}</span></br>
+        <span id="activity"><span style="color:white">Type d'activité:</span>&nbsp;{{oneevent.EvenementDate|date('Y-m-d H:i:s')}}</span></br>
+        <span id="crname"><span style="color:white">Le nom du representant:</span>&nbsp;{{oneevent.EvenementLieu}}</span></br>
+        <span id="cremail" style="color:rgb(58, 58, 181)"><span style="color:white">l'email du représentant:</span>&nbsp;{{oneevent.EvenementLien}}</span></br>
+        <div id="cdescription"><span style="color:white">Description :</span>&nbsp;{{oneevent.EvenementPrix}}</div>
+        <button id="f-button" style="margin-top: 50px; margin-left:400px;">J'aime</button>
+    </section>
+</article>
+{% endblock %}

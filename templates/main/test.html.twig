@@ -1,0 +1,75 @@
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{asset('assets/css/clubs.css')}}">
+ <link rel="stylesheet" href="{{asset('assets/css/accueilFS.css')}}">
+{% endblock stylesheets %}
+
+
+{% block body %}
+<body onload="typing()">
+<div class="asideNav" id="asideNav" onmouseenter="f1()" onmouseleave="f2()">
+            
+    <a href=" #"><img src="assets\images\icons8-page-d’accueil-32.png"  alt="">Accueil</a>
+   <a href=" #"><img src="assets\images\icons8-télécharger-le-rapport-de-graphique-24.png" alt="">Formation universitaire</a>
+   <a href=" #"><img src="assets\images\icons8-e-learning-48.png" alt="">Formation supplimentaire</a>
+    <a href=" #"><img src="assets\images\icons8-evénement-accepté-24.png" alt=""> Nouveautés des clubs</a>
+</div>
+<div class="main" id="main">
+        <div class="nav" id="nav">
+            <h3>LOGO</h3>
+            <ul>
+                <li><a href="#"> Accueil</a></li>
+                <li><a href="#">Cours</a></li>
+                <li><a href="#">Mes cours</a></li>
+                <li><a href="#">Aide</a></li>
+            </ul>
+            <div class="block">
+                <input type="search" name="search" class="search" placeholder="Chercher" id="">
+                <i class="fa fa-bell" ></i>
+                <img src="assets\images\user.png" alt="">
+            </div>
+        
+        </div>
+    <div class="main2">
+        <div class="home_container">
+            <header >
+                <img class="home_img" src="assets/images/tsyp.jpg" alt="home-image">
+              <div class="head" id="typewriter"><h2>Your Guide to all clubs: <span>Is Here</span></h2>
+                <h1> Come as a student leave as a leader </h1>
+              </div>
+            </header>
+            <section class="rolling">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lacus luctus accumsan tortor posuere ac ut consequat semper. Non enim praesent elementum facilisis. Feugiat vivamus at augue eget arcu dictum. Eget egestas purus viverra accumsan in nisl nisi. Vulputate mi sit amet mauris. Sagittis eu volutpat odio facilisis mauris. Odio ut sem nulla pharetra diam. Sollicitudin aliquam ultrices sagittis orci. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Porttitor lacus luctus accumsan tortor posuere ac ut consequat. Amet risus nullam eget felis. Pellentesque sit amet porttitor eget dolor morbi non. Tempus quam pellentesque nec nam. Sed id semper risus in hendrerit gravida rutrum quisque.
+
+                In nulla posuere sollicitudin aliquam ultrices. Amet purus gravida quis blandit turpis cursus in. Tristique risus nec feugiat in fermentum posuere urna. Urna duis convallis convallis tellus id interdum velit. Nunc aliquet bibendum enim facilisis gravida neque convallis a cras. Nibh praesent tristique magna sit amet purus gravida. Sit amet nisl suscipit adipiscing bibendum. Tellus molestie nunc non blandit massa enim nec dui nunc. Congue eu consequat ac felis donec. At consectetur lorem donec massa sapien faucibus et molestie ac. Auctor eu augue ut lectus arcu bibendum. Lectus magna fringilla urna porttitor. Libero volutpat sed cras ornare arcu dui. Aliquam vestibulum morbi blandit cursus risus at ultrices. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Potenti nullam ac tortor vitae purus.
+                
+                Egestas pretium aenean pharetra magna. Aliquet enim tortor at auctor urna. At risus viverra adipiscing at. Non curabitur gravida arcu ac tortor dignissim convallis. Amet purus gravida quis blandit turpis cursus. Diam phasellus vestibulum lorem sed risus. Viverra justo nec ultrices dui sapien eget. Leo urna molestie at elementum eu facilisis sed. Senectus et netus et malesuada fames ac. Massa enim nec dui nunc mattis enim ut tellus elementum. In nibh mauris cursus mattis molestie a iaculis at. Dui vivamus arcu felis bibendum ut tristique. Nisl suscipit adipiscing bibendum est ultricies.
+                
+                Quam quisque id diam vel quam. Eget mauris pharetra et ultrices neque ornare aenean. Diam donec adipiscing tristique risus nec. Dolor magna eget est lorem ipsum dolor sit amet. Eget duis at tellus at urna. Sem fringilla ut morbi tincidunt augue interdum velit euismod. Vel eros donec ac odio tempor orci. Faucibus pulvinar elementum integer enim neque volutpat. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Arcu dictum varius duis at. Lorem ipsum dolor sit amet consectetur.
+                
+                Lorem dolor sed viverra ipsum nunc aliquet bibendum. In vitae turpis massa sed elementum tempus egestas sed. Egestas quis ipsum suspendisse ultrices gravida dictum. Nulla facilisi nullam vehicula ipsum. Morbi quis commodo odio aenean. Sed vulputate mi sit amet mauris commodo quis. Tortor condimentum lacinia quis vel. Quam id leo in vitae turpis. Aliquet enim tortor at auctor urna nunc id cursus. Tortor id aliquet lectus proin nibh nisl condimentum id. Non sodales neque sodales ut etiam. Rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Bibendum enim facilisis gravida neque convallis. >%¨µ
+
+            </section>
+            
+        </div>
+    </div>
+</div>
+</body>
+{% endblock body %}
+{% block javascripts %}
+    <script src="{{asset('assets/js/home_clubs.js')}} " defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const main=document.getElementById("main");
+        const nav=document.getElementById("nav");
+       
+       function f1(){
+        console.log('hi');
+        main.classList.add("active");
+        nav.classList.add('ac')
+       }
+       function f2(){
+        console.log('bye');
+        main.classList.remove("active");
+        nav.classList.remove('ac')
+       }
+    </script>
+{% endblock %}

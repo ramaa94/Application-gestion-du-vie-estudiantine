@@ -1,0 +1,128 @@
+
+{# {% block title %}liste des clubs!{% endblock %} #}
+{# {% block javascripts %}
+<script src="{{asset('assets/js/liste.js')}} " defer></script>
+{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/liste_clubs.css')}}">
+{% endblock %}
+
+{% block body %}
+<section id="container" class="background">
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="">Accueil</a></li>
+       <li>Clubs</li>
+       <li>Evenements</li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+<div class="nosclubs">Nos Clubs</div>
+<div class="pulse"></div>
+<div class="button-create">
+    <button id="create-c">Créer un club</button>
+
+</div>
+
+<div class="cl_container "  style="display:flex"> 
+    {% for club in clubs %}
+
+    <section class="clubslist">
+
+    <div class="img-box">
+        <img id="imge" width="300px" height="300px" src="{{asset(club.ClubImg)}}"
+     </div>
+     <div class="nom-box">
+        <h1>{{club.ClubNom}}</h1>
+    </div>
+    <div class="date-box">
+        <span>{{club.CreatedAt|date('d/m/y')}}</span>
+    </div>
+    <div class="lire-box">
+        <a href="{{path('club',{'id':club.id})}}"><button id="suite">Lire la suite</button></a>
+    </div>
+
+        {% endfor %}
+        
+    </section>
+</div>
+</section>
+
+ <script  src="https://code.jquery.com/jquery-3.6.4.js"></script>
+ 
+{% endblock %} #}
+
+ {% block javascripts %}
+<script src="{{asset('assets/js/liste.js')}} " defer></script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/try.css')}}">
+{% endblock %}
+{% block body %}
+<body class="background">
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="/clubs">Accueil</a></li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+            <div class="dropdown-content">
+                <a href="/new/">créer club</a>
+              <a href="/clubs/list">Nos clubs</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+            <div class="dropdown-content">
+                <a href="/newevent/">créer Evenement</a>
+              <a href="/events/list">Nos Evenements</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+
+
+<div class="nosclubs">Nos Clubs</div>
+<div class="pulse"></div>
+
+
+
+
+ <section id="clubs" style="display:flex">
+{% for club in clubs %}
+
+    <div class="oneclub" >
+        
+        <img id="imge" width="300px" height="300px" src="{{asset(club.ClubImg)}}">
+        <h1 id="title">{{club.ClubNom}}</h1>
+        <span id="date">Created At : {{club.CreatedAt|date('d/m/y')}}</span>
+        <a href="{{path('club',{'id':club.id})}}"><button id="suite">Lire la suite</button></a>
+        {# <button id="follow">Follow</button> #}
+        <span id="followers">Followers</span>
+    </div>
+        {% endfor %}
+  </section> 
+   <script  src="https://code.jquery.com/jquery-3.6.4.js"></script>
+</body>
+{% endblock %}

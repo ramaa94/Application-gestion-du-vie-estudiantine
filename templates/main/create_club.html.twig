@@ -1,0 +1,128 @@
+
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/forms.css')}}">
+
+        {% endblock %}
+        
+{% block body %}
+<section class="bod-club">
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="/clubs">Accueil</a></li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+            <div class="dropdown-content">
+                <a href="/new/">créer club</a>
+              <a href="/clubs/list">Nos clubs</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+            <div class="dropdown-content">
+                <a href="/newevent/">créer Evenement</a>
+              <a href="/events/list">Nos Evenement</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+&nbsp;
+<section class="rect">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+ <section class="form">
+    <div id="sideimage">
+        &nbsp;     </div>
+    <div.f-container>
+    <h1>Créer votre Club</h1>
+     {{form_start(formClub)}}
+     {# {% for type, messages in app.flashes() %}
+    {% for message in messages %}
+        <div class="alert alert-{{ type }}">
+       Form Submitted Successfuly !   
+     </div> #}
+    {# {% endfor %} #}
+{# {% endfor %} #}
+     {{ form_errors(formClub) }}
+
+     <div class="top-form">
+        <label>Nom du club</label>
+        {{form_widget(formClub.ClubNom)}}
+    
+     </div>
+
+    <div class="top-form">
+        <label>Nombre des membres</label>
+        {{form_widget(formClub.ClubMembersNb)}}
+        {{ form_errors(formClub.ClubMembersNb) }}
+
+    </div>
+    
+    <div class="inst-act">
+    <div class="top-form" id="type-act" >
+        <label>Type d'activité</label>
+        {{form_widget(formClub.ClubActivityType)}}
+    </div> 
+    <div class="from-style" id="type-inst">
+        <label>Institut</label>
+        {{form_widget(formClub.ClubInstitut)}}
+    </div>
+</div>
+    <div class="from-style">
+        <label>Nom du Representant</label>
+        {{form_widget(formClub.ClubRepName)}}
+    </div>
+    <div class="from-style">
+        <label>Email du Representant</label>
+        {{form_widget(formClub.ClubRepEmail)}}
+    </div>
+    <div class="from-style" id="des-input">
+        <label>Description</label>
+        {{form_widget(formClub.ClubDescription, {'attr': {'class': ''}}) }}
+    </div>
+    <div class="form-image-input">
+        <label>Image</label>
+        {{form_widget(formClub.ClubImg ,{'attr': {'class': 'hihi'}})}}
+    </div>    
+    <button id="bt-submit" type="submit" >
+        {% if editMode %}
+        Enregistrer
+        {% else %}
+        Ajouter Club
+        {% endif %}
+    </button>
+    {% if formClub.vars.errors|length > 0 %}
+    <div class="alert alert-danger">
+        {{ form_errors(formClub) }}
+    </div>
+{% endif %}
+        {{form_end(formClub)}} 
+    </div.f-container>
+    
+  </section> 
+</section>
+{% endblock %}

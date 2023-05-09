@@ -1,0 +1,206 @@
+
+
+
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{asset('assets/css/clubs.css')}}">
+ <link rel="stylesheet" href="{{asset('assets/css/accueilFS.css')}}">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital@1&display=swap" rel="stylesheet">
+ {% endblock stylesheets %}
+
+
+{% block body %}
+<body onload="typing()">
+<div class="asideNav" id="asideNav" onmouseenter="f1()" onmouseleave="f2()">
+            
+    <a href=" #" ><img src="assets\images\icons8-page-d’accueil-32.png"  alt=""><span id="asideNav_span1" >Accueil</span></a>
+   <a href=" #"><img src="assets\images\icons8-télécharger-le-rapport-de-graphique-24.png" alt=""><span id="asideNav_span2" >Formation universitaire</span></a>
+   <a href=" #"><img src="assets\images\icons8-e-learning-48.png" alt=""><span id="asideNav_span3" >Formation supplimentaire</span></a>
+    <a href=" #"><img src="assets\images\icons8-evénement-accepté-24.png" alt=""> <span id="asideNav_span4" >Nouveautés des clubs</span></a>
+</div>
+<div class="main" id="main">
+        <div class="nav" id="nav">
+            <h3 style="margin-left: 20px;">LOGO</h3>
+            <ul>
+                
+                <li><a href="clubs"> Accueil</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+                    <div class="dropdown-content">
+                        <a href="/new/">créer club</a>
+                      <a href="/clubs/list">Nos clubs</a>
+                    
+                    </div>
+                  </div>
+                <li><a href="#">
+                    <div class="dropdown">
+                        <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+                        <div class="dropdown-content">
+                            <a href="/newevent/">créer Evenement</a>
+                          <a href="/events/list">Nos Evenement</a>
+                        
+                        </div>
+                      </div>
+                </a></li>
+                <li><a href="#">Aide</a></li>
+            </ul>
+            <div class="block">
+                <input type="search" name="search" class="search" placeholder="Chercher" id="">
+                <i class="fa fa-bell" ></i>
+                <img src="assets\images\user.png" alt="">
+            </div>
+        
+        </div>
+    <div class="main2">
+        <div class="home_container">
+            <header >
+                <img class="home_img" src="assets/images/tsyp.jpg" alt="home-image">
+                <div class="head" id="typewriter"><h2 id="student-span">Your Guide to all clubs: <span id="ishere">Is Here</span></h2>
+                <h1 id="come" > Come as a student leave as a leader </h1>
+              </div>
+            </header>
+            <section class="rolling">
+                 <h2>Notre Mission</h2>
+                 <div class="mission">
+                 Nous sommes un groupes d'etudiantes en ISSAT Sousse et nous voulons creer un espace libre et acceuillant
+                 pour tout etudiants qui s'interessent à la vie associative et voulant etre à jour avec tout evenement organisee
+                 par tous les clubs dans notre institut Nous sommes un groupes d'etudiantes en ISSAT Sousse et nous voulons 
+                 pour tout etudiants qui s'interessent à la vie associative et voulant etre à jour avec tout evenement organisee
+                 par tous les clubs dans notre institut.</div>
+
+            </section>
+           
+            
+            </div>
+            
+        </div>
+    </div>
+</div>
+<hr>
+<div class="partners-class">
+    <hr>
+
+{# <span id="oclubs-span">NOS CLUBS</span> #}
+<section id="partners">
+    <div class="slider">     
+        <div class="slide-track">
+            <div class="slide">
+                <img src="assets/images/ieee-logo.jpg" alt ="ieee logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/nateg-logo.jpg" alt ="nateg logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/microsoft-logo.jpg" alt ="microsoft logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/google-logo.png" alt ="google logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/cyber-logo.png" alt ="cyber logo" height="100" width="180" class="partners-imgs">
+            </div>
+        </div>
+        <div class="slide-track">
+            <div class="slide">
+                <img src="assets/images/ieee-logo.jpg" alt ="ieee logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/nateg-logo.jpg" alt ="nateg logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/microsoft-logo.jpg" alt ="microsoft logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/google-logo.png" alt ="google logo" height="100" width="180" class="partners-imgs">
+            </div>
+            <div class="slide">
+                <img src="assets/images/cyber-logo.png" alt ="cyber logo" height="100" width="180" class="partners-imgs">
+            </div>
+        </div>
+    </div>   
+</section>
+</div>
+<hr>
+{# <section class="nouveautes">
+    {% for oneevent in eventhome %}
+         <section class="newev" class="details_event" >
+
+    <img id="img" src="{{asset(oneevent.EvenementImage)}}"/>
+        <section  >
+            {# <h1>{{oneevent.EvenementNom}}</h1>
+            <span id="nomc"><span style="color:white">Nom Club:</span>&nbsp;{{oneevent.EvenementClubNom}}</span></br>
+            <span id="type-ev"><span style="color:white">Type d'évenement:</span>&nbsp;{{oneevent.EvenementType}}</span></br> #}
+            {# {% endfor %}
+        </section>
+    </section> #}
+{# </section>  #}
+<section id="clubs" style="display:flex;  background: linear-gradient(0.25turn,white,rgba(189, 189, 76,0.7),white);">
+    {% for oneevent in eventhome %}
+    
+        <div class="newev" >
+            <img id="img" src="{{asset(oneevent.EvenementImage)}}"/>
+            <div class="cont">
+            <span id="nouv">Nouveautés</span>
+            <h1 id="evnom">{{oneevent.EvenementNom}}</h1>
+            <span id="nomc"><span style="color:white">Nom Club:</span>&nbsp;{{oneevent.EvenementClubNom}}</span></br>
+            <span id="type-ev"><span style="color:white">Type d'évenement:</span>&nbsp;{{oneevent.EvenementType}}</span></br>
+            <span id="lien" style="color:rgb(58, 58, 181)"><span style="color:white">l'email du représentant:</span>&nbsp;{{oneevent.EvenementLien}}</span></br>
+            <a href="{{path('event',{'id':oneevent.id})}}"><button id="f-button">Lire la suite</button></a>
+
+            {# <button id="follow">Follow</button> #}
+        </div>
+        </div>
+            {% endfor %}
+      </section> 
+
+
+
+{% include "footer.html.twig" %}
+
+</body>
+{% endblock body %}
+{% block javascripts %}
+    <script src="{{asset('assets/js/home_clubs.js')}} " defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        const main=document.getElementById("main");
+        const nav=document.getElementById("nav");
+        const asideNav_span1=document.getElementById("asideNav_span1");
+        const asideNav_span2=document.getElementById("asideNav_span2");
+        const asideNav_span3=document.getElementById("asideNav_span3");
+        const asideNav_span4=document.getElementById("asideNav_span4");
+
+       function f1(){
+        console.log('hi');
+        main.classList.add("active");
+        nav.classList.add('ac')
+        asideNav.classList.add('ac')
+        asideNav_span1.style.color="white"
+        asideNav_span2.style.color="white"
+        asideNav_span3.style.color="white"
+        asideNav_span4.style.color="white"
+
+        
+       }
+       function f2(){
+        console.log('bye');
+        main.classList.remove("active");
+        nav.classList.remove('ac')
+
+       }
+        // window.onscroll = function () { 
+        //     if (document.body.scrollTop >= 200 ) {
+        //         nav.classList.add("nav-colored");
+        //         nav.classList.remove("nav-transparent");
+        //     } 
+        //     else {
+        //         nav.classList.add("nav-transparent");
+        //         nav.classList.remove("nav-colored");
+        //     }
+        // };
+    </script>
+{% endblock %}

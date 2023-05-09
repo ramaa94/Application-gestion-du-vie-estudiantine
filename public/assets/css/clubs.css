@@ -1,0 +1,380 @@
+@import 'https://fonts.googleapis.com/css?family=Sintony';
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap'); */
+
+
+
+.home_container{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    background-color: antiquewhite;
+}
+header{
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100% ;
+    transform-style: preserve-3d;
+    z-index:-1; 
+} 
+.home_img  {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index:-1;
+    margin-left: -15px;
+   
+}
+/* .s2{
+    transform: translateZ(-5px) scale(1.5);
+} */
+.home_img{
+    transform: translateZ(-10px) scale(2);
+}
+#student-span{color:#fff6ec;
+    text-shadow: 0 0 5px black;
+    font-size: 3rem;
+
+    
+    }
+#come{
+    color:whitesmoke;
+    text-shadow: 0 0 5px black;
+    font-size: 4rem;
+    margin-top: -40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight:bold ;
+    height: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    animation:animate 2s steps(15);
+
+
+}
+.rolling h2{
+    text-shadow: 0 0 2px black;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    
+}
+.rolling{
+    background: linear-gradient(0.25turn,#9198e5,rgba(189, 189, 76,0.7));  
+    margin-left: 0px;
+    height: 50%;
+    font-family: 'Carlito', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(2, 2, 39);
+    /* color:white ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.mission{
+    width: 600px;
+    border: 1px groove #333 ;
+    padding: 5px;
+}
+#typewriter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;  
+    transform: translate(-90px,200px);
+}
+#ishere{
+    font-weight: 100;
+    font-size:40px;
+    color: rgb(255,75,141);
+    letter-spacing: 5px;
+    background:linear-gradient(90deg,#ff0000,#ffff00,#ff00f3,#0033ff,#ff00c4,#ff0000);
+    background-size: 400%;
+    -webkit-text-fill-color: transparant;
+    -webkit-background-clip:text ;
+    /* color:#dd7732; */
+}
+#ishere::after{
+    content: "";
+    margin-left: 4px;
+    width: 1px;
+    height: 5%;
+    border-right: 4px solid #dd7732;
+    animation:blink 0.5s infinite ease;
+}
+@keyframes animate{
+    0%{width: 0%;}
+    100%{width:800px ;}
+}
+@keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity:1 ;}
+}
+@keyframes scroll{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(calc(-180px * 4));
+    }
+}
+
+#partners{
+    align-items:center;
+    justify-content: center;
+}
+.slider{
+    /* height: 200px; */
+    margin:auto;
+    overflow:hidden;
+    position:relative;
+    width:auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    margin-left: -80px;
+    height: 120px;
+    margin-top: 30px;
+}
+.slide-track{
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+
+}
+.slider .slide-track{
+    animation: scroll 40s linear infinite;
+    /* display:flex; */
+    width: calc(180px * 8);
+}
+.slider .slide{
+    height:20px;
+    width:20px;
+
+}
+.slide:nth-child(n+1){
+    margin-bottom: 80px;
+    margin-right: 120px;
+    margin-left: 100px;
+}
+.partners-imgs{
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 90px;
+    width: 130px;
+
+}
+.slider:hover .slide-track{
+    animation-play-state: paused;
+    
+}
+.slide-track img:hover{
+    box-shadow: 0px 0px 2px 3px  rgba(9, 9, 2, 0.908);
+}
+.slider:before{
+    position: absolute;
+    left: 0;
+    background: linear-gradient(to left ,rgba(255,255,255,0),white);
+    content: "";
+    z-index:2;
+    width: 250px;
+    height: 100%;
+}
+.slider:after{
+    position: absolute;
+    right: 0;
+    background: linear-gradient(to right ,rgba(255,255,255,0),white);
+    content: "";
+    z-index:2;
+    width: 250px;
+    height: 100%;
+}
+.partners-class{
+    margin-top: -730px;
+    margin-bottom: 20px;
+}
+#oclubs-span{
+    position: relative;
+    left:42%;
+    /* background-color: red; */
+    font-size: 50px;
+    font-weight: 700;
+    color:rgb(14, 14, 121) ;
+    text-shadow: 0 0 5px black;
+
+}
+#clubs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.newev{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* height: 300px; */
+    background-color:rgb(2, 2, 39) ;
+    margin-right: 3px;
+    margin-left: 3px;
+    width: 49%;
+   margin-bottom:70px ;
+   /* display: grid;
+   grid-template-columns: 2fr 2fr;
+   align-items: center; */
+}
+.nouveautes{
+    background: linear-gradient(0.25turn,white,rgba(189, 189, 76,0.7),white);  
+    /* padding-top: 10px;
+    margin-top: -5px; */
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    /* align-items: center; */
+    /* margin-bottom: 500px; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; */
+    margin: 50px 100px;
+padding: 100px;
+flex-wrap: wrap;
+
+
+}
+.details_event{
+    height: 300px;
+
+    background-color:rgb(2, 2, 39) ;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom: 60px;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    font-family:'Poppins';
+    
+
+}
+#img{
+    width: 300px;
+    height: 250px;
+}
+#nouv{
+    display: flex;
+    /* justify-content: center; */
+    margin-left: 180px;
+    font-size:17px ;
+    color:#654E92;
+
+}
+#nomc,#lien,#type-ev{
+color:(189, 189, 76,0.7);
+font-family: 'Poppins';
+padding: 10px;
+color: #9198e5;
+}
+#evnom{
+    margin-left: 150px;
+    font-family: 'Pacifico';
+    color: rgba(189, 189, 76,0.7);
+
+}
+
+
+#f-button{
+    width: 150px;
+   height: 40px;
+   margin-left: 150px;
+   margin-top: 17px;
+    background-color: #654E92;
+    border-radius: 4px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0 4px 25px rgba(163, 26, 136, 0.5); 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 600;
+    transition: 0.5s ease;
+    
+}
+#f-button:hover{
+transform:scale(0.9);
+cursor: pointer;   
+
+}
+
+footer{
+    /* background-color:#086ca4 ;  */
+    transform: translateY(400px);
+    background: linear-gradient(rgba(189, 189, 76,0.7),#9198e5);      /* background-color:#15161D ; */
+    height: 180px;
+    color:white;
+    opacity: 0.9  ;
+    margin-top: -400px;
+    padding-top: 20px;
+}
+    #contact{
+        display: flex;
+        justify-content: center;
+    }
+   
+    #ft{
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    /* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    padding-top: 2px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */

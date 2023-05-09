@@ -1,0 +1,387 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); */
+#navbarclubs{
+    display: flex;
+    flex-direction: row; 
+    background:rgba(255,255,255,.1) ;
+     border-top: 1px solid rgba(255, 255, 255, .5);
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between;
+    width: 100%; 
+}
+ul{
+    text-decoration: none;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 600px;
+   }
+   li{
+    padding-right:10px;
+
+   }
+   #sign-up{
+    display: flex;
+    margin:0px 50px;
+   }
+   #sign{
+    margin-right: 15px;
+    
+}
+.bts-logs{
+
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    cursor: pointer;   
+    border-radius: 15px;
+    background-color: transparent;
+    padding:6px;
+    box-shadow: 0 4px 25px rgba(1, 1, 1, 0.5); 
+    transition: 0.9s ease ;
+    text-decoration: none;
+    width: 90px;
+    margin-right: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+#navbarclubs ul li{
+    transition: 0.7s ease ;
+    cursor: pointer;}
+#navbarclubs ul li:active{
+    color: black;
+}
+.bts-logs:hover{
+    opacity: 0.7;
+    transform: scale(0.9);
+    border: none;
+
+}
+body{
+background-color:  #1c1a1a; ;
+margin: 0 !important;
+-webkit-font-smoothing: antialiased;
+
+}
+body:hover{
+    background-color: #121619;
+
+}
+#clubs{
+margin: 50px 100px;
+padding: 100px;
+flex-wrap: wrap;
+margin-left: 100px;
+justify-content: center;
+justify-content: space-around;
+margin-top: 100vh;
+ 
+} 
+.oneclub{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 300px;
+    margin: 30px;
+    width: 300px;
+    height: 400px;
+    margin-bottom: 70px;
+    /* background-color: white; */
+    transition: 0.5s;
+    background: #060c21;
+
+ 
+}
+.oneclub:hover{
+    height:450px;
+    padding: 10px;
+   
+
+
+}
+#imge{
+    top: 0;
+    box-sizing: border-box;
+}
+.oneclub #imge{
+    opacity: 0.1;
+    transition:0.5s;
+}
+
+.oneclub:hover #imge{
+opacity:1;
+/* margin-top:5px; */
+/* width: 280px;
+height: 280px; */
+}
+#followers {
+    display: none;
+}
+#follow {
+    display: none;
+}
+#date {
+    display: none;
+}
+
+.oneclub:hover #followers {
+    display:inline;
+
+}
+.oneclub:hover #follow {
+    display:inline;
+}
+.oneclub:hover #date {
+    display:inline;
+}
+
+
+
+.oneclub:before{
+    content: '';
+    position: absolute;
+     /* top: -2px;
+     left: -2px;
+     right: -2px;
+     bottom: -2px; */
+     width:300px;
+     height: 400px;
+    background-color: #fff;
+    z-index: -1;
+    filter:blur(5px);
+
+}
+.oneclub:after{
+    content: '';
+    width:300px;
+    height: 450px;
+    position: absolute;
+    /* top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px; */
+    background-color: #fff;
+     z-index: -2;
+    filter:blur(40px);
+} 
+.oneclub:before,
+.oneclub:after
+{
+    background:linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.oneclub:nth-child(2):before,
+.oneclub:nth-child(2):after
+{
+    background:linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}.oneclub:nth-child(3):before,
+.oneclub:nth-child(3):after
+{
+    background:linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+#title{
+    /* font-family: 'Edu NSW ACT Foundation', cursive; */
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    /* color: #0c85c7 */
+    letter-spacing: 1px;
+     color: white; 
+     margin-bottom: 0px;
+    }
+#date{
+    font-weight: 600;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    /* color: #0c85c7; */
+    margin-bottom: 5px;
+     color: #606060
+}
+#suite{
+    height: 40px;
+    width:150px ;
+    color: white;
+    border:1px solid #15161D;
+    padding: 10px;
+    
+    border-radius: 6px;
+    background-color: #0c85c7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    font-weight: 600;
+    
+}
+#suite:active{
+    background-color: rgb(93, 90, 106);
+}
+#suite a{
+    color: black;
+}
+#follow{
+    height:20px ;
+    width:70px ;
+    color: white;
+    border:1px solid #15161D;
+    /* text-align: center; */
+    /* border-radius: 6px; */
+    background-color: #3c4448;
+   margin-right: 230px;
+   margin-top: 50px;
+
+    /* font-size: 5; */
+    /* font-weight: 600; */
+}
+#followers{
+    color: #606060;
+    bottom: 10;
+    margin-left: 210px;
+    margin-top: 25px;
+}
+.nosclubs{
+
+    width: 100vw; 
+    height: 20vh;
+    text-align: center;
+    position: fixed;
+    top:30%;
+    font-size: 18vw;
+     transform-origin: 'center';
+     color: whitesmoke;
+ 
+ }
+ .button-create{
+     margin-top: 700px;
+     height: 100px;
+     width: 100%;
+     background-color: #b0b7cb;
+ }
+ .background {
+    /* background-image: linear-gradient(to bottom, #121619, #222, #121619); */
+    background-size: 100% 200%;
+    animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  } 
+  /* .background:hover {
+    background-color: #222;
+  } */
+  
+  
+ 
+  /* Add a pulsing effect */
+  .background:after {
+    content: "";
+    
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .pulse:after {
+    content: "";
+    
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.8;
+    }
+  /* }  
+    body{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* min-height: 100vh; */
+  }
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */

@@ -1,0 +1,120 @@
+
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('assets/css/forms.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/form_event.css')}}">
+
+        {% endblock %}
+        
+{% block body %}
+<section class="body-event">
+<nav id="navbarclubs">
+    <div>
+       <ul>
+       <li><a href="/clubs">Accueil</a></li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Clubs</button>
+            <div class="dropdown-content">
+                <a href="/new/">créer club</a>
+              <a href="/clubs/list">Nos clubs</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>
+        <div class="dropdown">
+            <button class="dropbtn" style="font-weight: 600;">Evenements</button>
+            <div class="dropdown-content">
+                <a href="/newevent/">créer Evenement</a>
+              <a href="/events/list">Nos Evenement</a>
+            
+            </div>
+          </div>
+       </li>
+       <li>Aide</li>
+       
+      </ul>
+   </div>
+     <div id="sign-up">
+       <button id="sign" class="bts-logs"><a class ="f" href="formc.html">Sign up</a></button>
+       <button id="log" class="bts-logs"><a  class ="f" href="login.html">log in</a></button>
+     </div>
+</nav>
+&nbsp;
+<section class="rect">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+ <section class="form">
+    <div id="sideimage">
+        &nbsp;     </div>
+    <div.f-container>
+    <h1>Créer votre Evénement</h1>
+     {{form_start(formEvent)}}
+     {{ form_errors(formEvent) }}
+
+     <div class="top-form">
+        <label>Nom de l'evenement</label>
+        {{form_widget(formEvent.EvenementNom)}}
+        {{ form_errors(formEvent.EvenementNom) }}
+
+     </div>
+
+    <div class="top-form">
+        <label>Nom du club organisateur</label>
+        {{form_widget(formEvent.EvenementClubNom)}}
+    </div>
+    
+     
+    <div class="top-form" id="type-act" >
+        <label>Type d'événement</label>
+        {{form_widget(formEvent.EvenementType)}}
+    </div> 
+    <div class="date-event">
+        <label>Date d'événement</label>
+        {{form_widget(formEvent.EvenementDate, {'attr': {'class': 'my-date-input'}})}}
+    </div>
+    <div class="from-style">
+        <label>Lieu d'événement </label>
+        {{form_widget(formEvent.EvenementLieu)}}
+    </div>
+    <div class="from-style">
+        <label>Lien d'évenement</label>
+        {{form_widget(formEvent.EvenementLien)}}
+    </div>
+    <div class="from-style" id="prix">
+        <label>Prix de participation</label>
+        {{form_widget(formEvent.EvenementPrix, {'attr': {'class': ''}}) }}
+    </div>
+    <div class="form-image-input">
+        <label>Image</label>
+        {{form_widget(formEvent.EvenementImage, {'attr': {'class': 'hihi'}})}}
+    </div>    
+    <button id="bt-submit" type="submit" >
+        {% if editMode %}
+        Enregistrer
+        {% else %}
+        Ajouter Evenement
+        {% endif %}
+    </button>
+    {% if formEvent.vars.errors|length > 0 %}
+    <div class="alert alert-danger">
+        {{ form_errors(formEvent) }}
+        {% endif %}
+
+        {{form_end(formEvent)}} 
+    </div.f-container>
+    
+  </section> 
+</section>
+{% endblock %}

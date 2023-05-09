@@ -1,0 +1,266 @@
+body{
+    overflow-x: hidden;
+}
+#navbarclubs{
+    display: flex;
+    flex-direction: row;
+    background:rgba(255,255,255,.1) ;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+    align-items: center;
+    font-weight: 600;
+    justify-content: space-between;
+   }
+   ul{
+    text-decoration: none;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+    margin-left: 600px;
+   }
+   li{
+    padding-right:10px;
+
+   }
+   #sign-up{
+    display: flex;
+    margin:0px 50px;
+   }
+   #sign{
+    margin-right: 15px;
+    
+}
+.bts-logs{
+
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    cursor: pointer;   
+    border-radius: 15px;
+    background-color: transparent;
+    padding:6px;
+    box-shadow: 0 4px 25px rgba(1, 1, 1, 0.5); 
+    transition: 0.9s ease ;
+    text-decoration: none;
+    width: 90px;
+    margin-right: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+#navbarclubs ul li{
+    transition: 0.7s ease ;
+    cursor: pointer;}
+#navbarclubs ul li:active{
+    color: black;
+}
+.bts-logs:hover{
+    opacity: 0.7;
+    transform: scale(0.9);
+    border: none;
+
+}
+
+#container{
+    /* background-color: #b0b7cb; */
+    -webkit-font-smoothing: antialiased;
+    /* min-height: 1000vh; */
+    /* background-color: #14161b; */
+     /* background:linear-gradient(to right, rgb(55, 59, 68), rgb(38, 38, 117)35%,rgba(0,212,255,1)100%); */
+/* display: flex;
+flex-direction: column; */
+}
+.nosclubs{
+
+   width: 100vw; 
+   height: 20vh;
+   text-align: center;
+   position: fixed;
+   top:30%;
+   font-size: 18vw;
+    transform-origin: 'center';
+    color: whitesmoke;
+
+}
+.button-create{
+    margin-top: 700px;
+    height: 100px;
+    width: 100%;
+    background-color: #b0b7cb;
+}
+.cl_container{
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; */
+    min-height: 500vh;
+min-width: 400vh;
+/* grid-template-columns: auto auto auto; */
+
+/* justify-content: center;
+flex-direction: row;
+
+align-items: center;
+flex-wrap: wrap; */
+background: #010615;
+color: red;
+
+
+}
+
+ .clubslist{
+    /* position: relative; */
+    width: 300px;
+    height: 350px;
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; */
+    margin: 40px;
+    transition: 0.5s;
+    border: 5px solid red;
+
+} 
+#imge{
+width:300px;
+height: 200px;
+border: 5px solid red;
+object-fit: cover;
+
+}
+.img-box{
+    width: 200px;
+    height: 100px;
+}
+
+#container {
+background-color: #333;  }
+#container:hover{
+    background-color: #222;
+}
+  
+  /* Add an animated gradient to the background*/
+   .background {
+    background-image: linear-gradient(to bottom, #111, #222, #111);
+    background-size: 100% 200%;
+    animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  } 
+  .background:hover {
+    background-color: #222;
+  }
+  
+  
+ 
+  /* Add a pulsing effect */
+  .background:after {
+    content: "";
+    
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .pulse:after {
+    content: "";
+    
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.8;
+    }
+  /* }  
+    body{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* min-height: 100vh; */
+  }
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 2px;
+    font-size: 16px;
+    border: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  /* .dropdown:hover .dropbtn {background-color: #3e8e41;} */
