@@ -20,7 +20,8 @@ use App\Entity\ClubsClubList;
 use App\Entity\ClubsEvenements;
 use App\Repository\ClubsClubListRepository;
 use App\Repository\ClubsEvenementsRepository;
-
+use App\Repository\CoursRepository;
+use App\Repository\CourstdRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -44,15 +45,18 @@ class MainController extends AbstractController
     }
 
     #[Route('/', name: 'home')]
-    public function home()
+    public function home(CoursRepository $cr,ManagerRegistry $doctrine,CourstdRepository $courstdRepository)
     {
-        return $this-> render('main/home.html.twig');
+        $matiere = $courstdRepository->findBy([],[],4);
+        $events = $doctrine->getRepository(ClubsEvenements::class)->findBy([],['id'=>'DESC'],2);
+        $cours=$cr->findBy([],['nom'=> 'DESC'],3);
+        return $this-> render('main/home.html.twig',['c'=>$cours,'eventhome'=>$events,  'matieres' => $matiere,]);
     }
-    #[Route('/login', name: 'login')]
-    public function login()
-    {
-        return $this-> render('main/compte.html.twig');
-    }
+    // #[Route('/login', name: 'login')]
+    // public function login()
+    // {
+    //     return $this-> render('main/compte.html.twig');
+    // }
 
     #[Route('/test', name: 'test')]
     public function test()

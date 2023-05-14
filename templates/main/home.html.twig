@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block title %}Acceuil{% endblock %}
+
 {% block stylesheets %}
+
+<link rel="stylesheet" href={{asset("assets/css/etdint.css")}}>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -11,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/homecss.css')}}">
 {% endblock %}
 {% block body %}
-    <div id="slider">
+    {# <div id="slider">
         
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -37,11 +39,155 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
-    </div>
-    <div id="total">
-        <p id="about-us">Qui Sommes Nous ?</p>
+    </div> #}
+    <header>
+      <a href="#" class="brand">LOGO</a>
+      <div class="menu"></div>
+      <div class="navigation">
+        <div class="navigs">
+          <a href="{{url('home')}}">Home</a>
+          <a href="{{url('collapsible')}}">Formations Universitaires</a>
+          <a href="{{url('mainFS')}}">Formations Supplémentaires</a>
+          <a href="{{url('c_home')}}">Nouveautés des clubs </a>
+
+        </div>
+      </div>
+    </header>
+    <section class="home">
+      <video class="vid-slider active" src="{{asset('assets/video/v1.mp4')}}" autoplay muted loop></video>
+      <video class="vid-slider" src="{{asset('assets/video/v2.mp4')}}" autoplay muted loop></video>
+      <video class="vid-slider" src="{{asset('assets/video/v1.mp4')}}" autoplay muted loop></video>
+
+      <div class="content">
+        <h1>UNIV WORLD</h1><br><span>Your Guide to a better college life</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br> incididunt ut labore et dolore magna aliqua. Aliquet risus feugiat in ante metus<br> dictum at tempor. Scelerisque mauris pellentesque pulvinar pellentesque</p>
+        <a href="{{url('login')}}">VOIR PLUS</a>
+      </div>
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-nav">
+        <div class="nav-btn active" data-slide="0"></div>
+        <div class="nav-btn" data-slide="1"></div>
+        <div class="nav-btn" data-slide="2"></div>
+
+        
+
+      </div>
+    </section>
+    <div id="total" style="height: 300px; ">
+      <p id="about-us">Qui Sommes Nous ?</p>
+      <center>This highly customizable education web template is coded in block-based structure and well-documented, so you can extensively customize it depending on your needs. If you are looking for a modern & great-looking HTML template built with Bootstrap 5 for an education website, then Elearning is a perfect choice.</center>
+  </div>
+</div>
+    <div id="file" style="margin-top: 20px;">
+      <a class="lien" href='collapsible'>Formation Universitaires</a>
+      <div class="file" >
+      {% for matiere in matieres %}
+      <div> 
+              <img src="{{ asset('assets/image/pdf.png') }}" alt="">
+              <a href="{{ asset('assets/docs/' ~ matiere.nom) }}">{{ matiere.nom }}</a><br/>
+      </div>        
+      {% endfor %}
     </div>
 </div>
 
-     
+    <div style="margin-top: 20px;">
+      <div class="h4">
+  
+      </div>
+      <a class="lien" href='{{url('mainFS')}}'>Formation supplémentaires</a>
+      <div class="cours">
+          {% for cours in c %}
+  <div class="cour" style="width:280px; display: grid; grid-template-rows: 1fr 2fr 1fr;">
+      <img style="height: 120px;" src="assets/image/{{cours.image}}" alt="">
+      <div class="decri"  >
+          <div class="cate" >
+              <span style="background-color:rgba(95, 158, 160, 0.65) ; margin: 5px 0" class="badge badge-info">{{cours.type}}</span>
+          </div>
+          <div class="cc">
+              <h4 style="text-decoration: none;"><a style="text-decoration: none;" href="#" >{{cours.nom}}</a> </h4>
+          </div>
+          <div class="dd">
+              <p>Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="detail" style="display: flex;">
+              <span class="rate"style="margin: -10px -10px auto auto; "><i class="fa-solid fa-star"></i><span class="val">{{cours.note}}%</span></span>
+              <span class="rate" style="color: cadetblue; margin: auto; margin-top: -10px;"><i style="color: cadetblue;" class="fa-solid fa-globe"></i><span  class="val">{{cours.langue}}</span></span>
+              <span class="rate" style="color: orange; margin: auto; margin-top: -12px;"><i style="color: orange;" class="fa-solid fa-signal"></i><span  class="val">{{cours.niveau}}</span></span>
+          </div>
+          
+      </div>
+      <div class="acces">
+          <div class="temps"> <i class="fa-regular fa-clock"> </i> {{cours.dure}} hrs </div>
+          <button type="button" style="background-color: rgb(2, 2, 39); border: transparent;border-radius: 20px;
+          margin-top: 10px;margin-right: 5px; height: 30px;
+          display: flex; align-items: center;" class="btn btn-primary"><a style="color: beige;" href="{{path('det_cours',{"id":cours.id})}}">commencer</a></button>
+          
+      </div>
+  </div>
+  {% endfor %}
+ 
+      </div>
+      <section id="clubs" style="display:flex;  background: linear-gradient(0.25turn,white,rgba(189, 189, 76,0.7),white); width: 90% ;margin: auto;margin-top: 30px;">
+        <a class="lien" href='{{url('c_home')}}'>Nouveautés des clubs</a>
+        {% for oneevent in eventhome %}
+        
+            <div class="newev" >
+                <img id="img" src="{{asset(oneevent.EvenementImage)}}"/>
+                <div class="cont">
+                <span id="nouv">Nouveautés</span>
+                <h1 id="evnom">{{oneevent.EvenementNom}}</h1>
+                <span id="nomc"><span style="color:white">Nom Club:</span>&nbsp;{{oneevent.EvenementClubNom}}</span></br>
+                <span id="type-ev"><span style="color:white">Type d'évenement:</span>&nbsp;{{oneevent.EvenementType}}</span></br>
+                <span id="lien" style="color:rgb(58, 58, 181)"><span style="color:white">l'email du représentant:</span>&nbsp;{{oneevent.EvenementLien}}</span></br>
+                <a href="{{path('event',{'id':oneevent.id})}}"><button id="f-button">Lire la suite</button></a>
+    
+                {# <button id="follow">Follow</button> #}
+            </div>
+            </div>
+                {% endfor %}
+          </section> 
+   
+<script> 
+//       const bts=document.querySelectorAll('.nav-btn')
+//       const slides=document.querySelectorAll('.vid-slider')
+
+//       var slider=function(manual){
+//         bts.forEach((btn) =>{
+//            btn.classList.remove('active');});
+//         slides.forEach((slide) =>{
+//            btn.classList.remove('active');});
+//         // slides.forEach(slide => slide.classList.remove('active'));
+
+//         bts[manual].classList.add("active");
+//         slides[manual].classList.add("active")
+
+//       }
+//       bts.forEach((btn, i) => {
+//   btn.addEventListener("click", () => {
+//     slider(i);
+//   });
+// });
+const bts = document.querySelectorAll('.nav-btn');
+const slides = document.querySelectorAll('.vid-slider');
+
+var slider = function(manual) {
+  bts.forEach(btn => btn.classList.remove('active'));
+  slides.forEach(slide => slide.classList.remove('active'));
+
+  bts[manual].classList.add('active');
+  slides[manual].classList.add('active');
+};
+
+bts.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    slider(i);
+  });
+});
+
+
+    </script> 
   {% endblock body %}

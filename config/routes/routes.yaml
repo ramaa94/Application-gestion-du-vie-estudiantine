@@ -1,0 +1,29 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+add_cours:
+    path: /courstd
+    controller: App\Controller\dbController::addcours
+collapsible:
+    path: /collapsible
+    controller: App\Controller\dbController::index
+matieres:
+    path: /matieres/{ansem}
+    controller: App\Controller\dbController::matieres
+courstd:
+    path: /courstd/{anesem}/{nom}
+    controller: App\Controller\dbController::courstd
+dbController:
+    path: /dbController
+    controller: App\Controller\dbController\ajtc
+
+ajoutcours:
+    path: /ajoutcours
+    methods: [POST,GET]
+    controller: App\Controller\dbController::ajtc
+getmat:
+    path: /getmat
+    controller: App\Controller\dbController::getMatieres
+test:
+    path: /test/{matiere}
+    controller: App\Controller\dbController::test
